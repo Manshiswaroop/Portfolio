@@ -1,36 +1,25 @@
-import { motion } from "framer-motion";
-import Avatar from "./Avatar";
+import React from 'react';
 
-export default function Hero() {
+const Hero = () => {
   return (
     <section className="hero">
-      <Avatar src="/avatar.png" size={240} alt="Manshi Swaroop" />
-
-      <motion.div
-        className="hero-text"
-        initial={{ x: 40, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.9 }}
-      >
+      <div className="container hero-content">
+        <div className="avatar">
+          <img src="/avatar.png" alt="Manshi Swaroop" />
+        </div>
+        <h1>Manshi Swaroop</h1>
         <h2>Data Analyst · Data Scientist</h2>
+        <p>Email: <a href="mailto:swaroopm1520@gmail.com" style={{color: '#7b61ff'}}>swaroopm1520@gmail.com</a> | Phone: +91 9430959001</p>
         <p>
-          Email:{" "}
-          <a href="mailto:swaroopm1520@gmail.com">swaroopm1520@gmail.com</a> |
-          Phone: +91&nbsp;9430959001
+          <a href="https://github.com/Manshiswaroop" target="_blank" rel="noopener noreferrer" style={{color: '#7b61ff'}}>GitHub</a> | 
+          <a href="https://linkedin.com/in/manshiswaroop" target="_blank" rel="noopener noreferrer" style={{color: '#7b61ff'}}>LinkedIn</a>
         </p>
-        <p>
-          <a href="https://github.com/Manshiswaroop" target="_blank" rel="noreferrer">
-            GitHub
-          </a>{" "}
-          |{" "}
-          <a href="https://linkedin.com/in/manshiswaroop" target="_blank" rel="noreferrer">
-            LinkedIn
-          </a>
-        </p>
-        <a className="download-btn" href="/resume.pdf" download>
-          Download Resume
-        </a>
-      </motion.div>
+        <div className="hero-buttons">
+          <a href="/resume.pdf" download className="btn">Download Resume</a>
+        </div>
+      </div>
     </section>
   );
-}
+};
+
+export default Hero;
